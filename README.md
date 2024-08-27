@@ -17,5 +17,7 @@ This is a simple FastAPI application that runs on Heroku. It uses the FastAPI fr
 3. Push to heroku: `git push heroku main`.
 4. Open the app: `heroku open`.
 5. Check health: `heroku logs --tail`.
+6. Make sure IP (0.0.0.0) whitelisted in MongoDB Atlas.
+   > Why allow all? Because heroku app is not static, it can change IP. Although there is a way to fix it i.e. by using M10 & above, which has private IP whitelisting where you can whitelist private IP ranges of the region where the heroku app is hosted.
 
 Try to access the endpoint: `curl https://hello.herokuapp.com/health`.
